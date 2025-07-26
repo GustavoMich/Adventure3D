@@ -3,23 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 
-public class Test
+namespace Ebac.StateMachine
 {
-    public enum Test2
-    {
-        NONE
-    }
 
-    public void Aa()
-    {
-        StateMachine<Test2> stateMachine = new StateMachine<Test2>();
 
-        stateMachine.RegisterStates(Test.Test2.NONE, new StateBase());
-    }
-}
-
-public class StateMachine<T> where T : System.Enum
-{
+  public class StateMachine<T> where T : System.Enum
+  {
     public Dictionary<T, StateBase> dictionaryState;
 
     private StateBase _currentState;
@@ -30,12 +19,14 @@ public class StateMachine<T> where T : System.Enum
        get { return _currentState; }
     }
 
+    
+
     public void Init()
     {
-        dictionaryState = new Dictionary<T, StateBase>();
+       dictionaryState = new Dictionary<T, StateBase>();
     }
 
-    public void RegisterStates(T typeEnum, StateBase state)
+        public void RegisterStates(T typeEnum, StateBase state)
     {
         
         dictionaryState.Add(typeEnum, state);
@@ -57,4 +48,5 @@ public class StateMachine<T> where T : System.Enum
     {
         if (_currentState != null) _currentState.OnStateStay();
     }
+  }
 }
