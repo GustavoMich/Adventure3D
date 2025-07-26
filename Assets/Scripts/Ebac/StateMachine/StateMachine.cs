@@ -27,14 +27,14 @@ namespace Ebac.StateMachine
     }
 
         public void RegisterStates(T typeEnum, StateBase state)
-    {
+        {
         
-        dictionaryState.Add(typeEnum, state);
+          dictionaryState.Add(typeEnum, state);
         
-    }
+        }
 
 
-
+    
     public void SwitchState(T state)
     {
         if(_currentState != null) _currentState.OnStateExit();

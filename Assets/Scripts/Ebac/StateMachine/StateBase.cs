@@ -24,5 +24,8 @@ namespace Ebac.StateMachine
         Debug.Log("OnStateExit");
 
     }
+    
+   
   }
+
 }

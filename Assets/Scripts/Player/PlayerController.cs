@@ -12,11 +12,13 @@ public class PlayerController : MonoBehaviour
     public LayerMask ground;
      
 
-    //public bool canMove = false;
+    public bool canMove = false;
+    public bool cantJump = true;
 
 
     private void Update()
     {
+        
         HandleInput();
         LimitVelocity();
         HandleDrag();
@@ -45,44 +47,50 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (left)
+        if (!canMove) return;
         {
+
+          if (left)
+          {
             myRigidbody.AddForce(Vector3.left * speed);
             {
                 left = false;
             }
-        }
+          }
 
-        if (right)
-        {
+          if (right)
+          {
             myRigidbody.AddForce(Vector3.right * speed);
             {
                 right = false;
             }
-        }
+          }
 
-        if (forward)
-        {
+          if (forward)
+          {
             myRigidbody.AddForce(Vector3.forward * speed);
             {
                 forward = false;
             }
-        }
+          }
 
-        if (backward)
-        {
+          if (backward)
+          {
             myRigidbody.AddForce(Vector3.back * speed);
             {
                 backward = false;
             }
-        }
+          }
 
-        if(jump)
-        {
+
+            if (!cantJump)
+          if(jump)
+          {
             transform.position += Vector3.up * .1f;
             myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, 0, myRigidbody.velocity.y);
             myRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jump = false;
+          }
         }
     }
 

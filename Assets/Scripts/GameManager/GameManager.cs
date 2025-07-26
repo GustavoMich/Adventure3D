@@ -6,6 +6,8 @@ using Ebac.StateMachine;
 
 public class GameManager : Singleton<GameManager>
 {
+   
+
     public enum GameStates
     {
         INTRO,
@@ -36,4 +38,5 @@ public class GameManager : Singleton<GameManager>
         stateMachine.SwitchState(GameStates.INTRO);
     }
 
+    
 }
