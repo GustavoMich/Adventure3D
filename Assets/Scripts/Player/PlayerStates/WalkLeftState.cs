@@ -1,20 +1,20 @@
-using Ebac.StateMachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Ebac.StateMachine;
 
-public class WalkingState : StateBase
+public class WalkLeftState : StateBase
 {
     private Transform mytransform;
 
-    public WalkingState(Transform t)
+    public WalkLeftState(Transform t)
     {
         mytransform = t;
     }
 
     public override void OnStateStay()
     {
-        mytransform.Translate(Vector3.forward * Time.deltaTime * 3f);
-        Debug.Log("Walking");
+        mytransform.Translate(Vector3.left * Time.deltaTime * 3f);
+        Debug.Log("WalkingLeft");
     }
 }

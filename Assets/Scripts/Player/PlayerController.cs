@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
     {
         Idle,
         Walking,
-        Jumping
+        Jumping,
+        WalkRight,
+        WalkLeft
     }
 
     void Start()
@@ -25,6 +27,10 @@ public class PlayerController : MonoBehaviour
         stateMachine.RegisterStates(CharacterState.Idle, new IdleState01());
         stateMachine.RegisterStates(CharacterState.Walking, new WalkingState(transform));
         stateMachine.RegisterStates(CharacterState.Jumping, new JumpingState(_myrb));
+        stateMachine.RegisterStates(CharacterState.WalkRight, new WalkRightState(transform));
+        stateMachine.RegisterStates(CharacterState.WalkLeft, new WalkLeftState(transform));
+
+
 
         stateMachine.SwitchState(CharacterState.Idle);
     }
@@ -41,5 +47,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.W))
             stateMachine.SwitchState(CharacterState.Idle);
+
+        if (Input.GetKeyDown(KeyCode.D))
+            stateMachine.SwitchState(CharacterState.WalkRight);
+
+        if (Input.GetKeyDown(KeyCode.A))
+            stateMachine.SwitchState(CharacterState.WalkLeft);
     }
 }
