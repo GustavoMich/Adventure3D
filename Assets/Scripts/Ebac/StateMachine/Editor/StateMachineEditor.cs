@@ -1,13 +1,17 @@
-using System.Linq;
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 using UnityEditor;
+using UnityEngine;
+using static FSMExample;
 
 [CustomEditor(typeof(FSMExample))]
 public class StateMachineEditor : Editor
 {
     public bool showFoldout;
+
+
 
     public override void OnInspectorGUI()
     {
@@ -39,5 +43,9 @@ public class StateMachineEditor : Editor
                 }
             }
         }
+
+        
     }
+
+    
 }

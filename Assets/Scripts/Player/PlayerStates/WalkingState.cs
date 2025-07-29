@@ -14,6 +14,7 @@ public class WalkingState : StateBase
 
     public override void OnStateStay()
     {
+        
         mytransform.Translate(Vector3.forward * Time.deltaTime * 3f);
         Debug.Log("Walking");
     }

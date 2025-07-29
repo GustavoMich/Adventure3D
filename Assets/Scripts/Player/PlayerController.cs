@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private StateMachine<CharacterState> stateMachine;
-    private Rigidbody _myrb;
+    
+    public Rigidbody _myrb;
 
 
-    public enum CharacterState
+    /*public enum CharacterState
     {
         Idle,
         Walking,
@@ -53,5 +53,5 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
             stateMachine.SwitchState(CharacterState.WalkLeft);
-    }
+    }*/
 }
