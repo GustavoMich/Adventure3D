@@ -6,10 +6,7 @@ using Ebac.StateMachine;
 
 public class FSMExample : MonoBehaviour
 {
-    public PlayerController player;
-    private Rigidbody _myrb;
     
-    public Transform mytransform;
 
 
     public enum ExampleEnum
@@ -24,14 +21,13 @@ public class FSMExample : MonoBehaviour
 
     private void Start()
     {
-        _myrb = player.GetComponent<Rigidbody>();
-        
+       
 
         stateMachine = new StateMachine<ExampleEnum>();
         stateMachine.Init();
-        stateMachine.RegisterStates(ExampleEnum.STATE_ONE, new IdleState01());
-        stateMachine.RegisterStates(ExampleEnum.STATE_TWO, new WalkingState(mytransform));
-        stateMachine.RegisterStates(ExampleEnum.STATE_THREE, new JumpingState(_myrb));
+        stateMachine.RegisterStates(ExampleEnum.STATE_ONE, new StateBase());
+        stateMachine.RegisterStates(ExampleEnum.STATE_TWO, new StateBase());
+        stateMachine.RegisterStates(ExampleEnum.STATE_THREE, new StateBase());
 
 
         stateMachine.SwitchState(ExampleEnum.STATE_ONE);
@@ -41,28 +37,6 @@ public class FSMExample : MonoBehaviour
     }
 
 
-
-    void Update()
-    {
-
-        stateMachine.Update();
-
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            stateMachine.SwitchState(ExampleEnum.STATE_TWO);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-            stateMachine.SwitchState(ExampleEnum.STATE_THREE);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-            stateMachine.SwitchState(ExampleEnum.STATE_ONE);
-
-
-    }
 
     
 
