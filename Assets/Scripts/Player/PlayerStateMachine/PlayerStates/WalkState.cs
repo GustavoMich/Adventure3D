@@ -18,17 +18,14 @@ public class WalkState : StateBase
         startPos = player.transform.position;
         targetPos = startPos + player.transform.forward * player.walkDistance;
         returning = false;
-        Debug.Log("Entered Walk");
+        Debug.Log("Walking");
     }
 
     public override void OnStateStay()
     {
         Vector3 dest = returning ? startPos : targetPos;
-        player.transform.position = Vector3.MoveTowards(
-            player.transform.position,
-            dest,
-            player.walkSpeed * Time.deltaTime
-        );
+        player.transform.position = Vector3.MoveTowards(player.transform.position, dest, player.walkSpeed * Time.deltaTime);
+            
 
         
         if (!returning && Vector3.Distance(player.transform.position, targetPos) < 0.01f)
@@ -39,7 +36,7 @@ public class WalkState : StateBase
 
     public override void OnStateExit()
     {
-        Debug.Log("Exiting Walk");
+        Debug.Log("Exit Walk");
     }
 }
 
