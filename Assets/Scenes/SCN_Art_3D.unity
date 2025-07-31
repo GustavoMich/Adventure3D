@@ -3913,7 +3913,7 @@ GameObject:
   - component: {fileID: 857857933}
   - component: {fileID: 857857932}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3928,13 +3928,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 857857931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08929ad7f79574941bea8b67010cb1b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d781740d336f9448b90d7f5e60cfaaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefabProjectile: {fileID: 6121501688957004366, guid: 88de67a2b2d6c304b96c89692048d9d0, type: 3}
   positionToShoot: {fileID: 94194957}
   timeBetweenShoot: 0.3
-  keyCode: 122
+  maxShoot: 5
+  timeToRecharge: 1
 --- !u!65 &857857933
 BoxCollider:
   m_ObjectHideFlags: 0
