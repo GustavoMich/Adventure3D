@@ -4906,6 +4906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunBase: {fileID: 6500543132864974394, guid: 62f8d74d11f6d474d8d6ef7baf38a62f, type: 3}
+  secondGunBase: {fileID: 1861072797405207575, guid: dd5f71bf91891d845bfb47002a733b6f, type: 3}
   gunPosition: {fileID: 1674104367}
 --- !u!1001 &950019377
 PrefabInstance:
