@@ -1168,6 +1168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e016a4e70a92adf48a2b46b48a3e652e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 0}
   startLife: 10
   _currentLife: 0
   _animationBase: {fileID: 216355320}
@@ -1182,7 +1183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216355316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 404.1833, y: -8.33, z: 56.253563}
+  m_LocalPosition: {x: 416.19, y: -8.33, z: 71.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 952210931}
@@ -5061,8 +5062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39449cf05c61774ababb4c368014437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunBase: {fileID: 6500543132864974394, guid: 62f8d74d11f6d474d8d6ef7baf38a62f, type: 3}
-  secondGunBase: {fileID: 1861072797405207575, guid: dd5f71bf91891d845bfb47002a733b6f, type: 3}
+  gunBase: {fileID: 1861072797405207575, guid: dd5f71bf91891d845bfb47002a733b6f, type: 3}
+  secondGunBase: {fileID: 6500543132864974394, guid: 62f8d74d11f6d474d8d6ef7baf38a62f, type: 3}
   gunPosition: {fileID: 1674104367}
 --- !u!1001 &950019377
 PrefabInstance:
@@ -6549,7 +6550,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238012845}
-  m_LocalRotation: {x: 0.24446768, y: -0.000000018653607, z: 0.0000000047029025, w: 0.9696575}
+  m_LocalRotation: {x: 0.24446768, y: 0.000000018653607, z: -0.0000000047029025, w: 0.9696575}
   m_LocalPosition: {x: 417.1724, y: 3.2780075, z: 33.5745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7936,7 +7937,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.24446768, y: -0.000000018653607, z: 0.0000000047029025, w: 0.9696575}
+  m_LocalRotation: {x: 0.24446768, y: 0.000000018653607, z: -0.0000000047029025, w: 0.9696575}
   m_LocalPosition: {x: 417.1724, y: 3.2780075, z: 33.5745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
