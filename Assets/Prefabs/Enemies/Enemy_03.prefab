@@ -1,20 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &5666420875333951811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078630800767282734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3264d834d1bc2b94eac27fbf39682688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 8736039095940206587}
-  color: {r: 1, g: 0.33490568, b: 0.33490568, a: 1}
-  duration: 0.1
 --- !u!1 &5666420876100442965
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5666420876100442961}
-  - component: {fileID: 5666420876100442967}
   - component: {fileID: 5666420876100442964}
   - component: {fileID: 5666420876100442966}
+  - component: {fileID: 4935644115548444330}
   m_Layer: 0
   m_Name: Enemy_03
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,27 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5666420876100442967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5666420876100442965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e016a4e70a92adf48a2b46b48a3e652e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider: {fileID: 0}
-  flashColor: {fileID: 0}
-  particleSystem: {fileID: 5666420876209737423}
-  startLife: 25
-  _currentLife: 0
-  _animationBase: {fileID: 0}
-  startAnimationDuration: 0.2
-  startAnimationEase: 27
-  startWithBornAnimation: 1
 --- !u!114 &5666420876100442964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +69,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.598053, y: 4.555065, z: 3.8718948}
   m_Center: {x: -13.88826, y: -5.1757073, z: 18.210232}
+--- !u!54 &4935644115548444330
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666420876100442965}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &5666420876209737420
 GameObject:
   m_ObjectHideFlags: 0
@@ -4999,6 +4979,22 @@ Transform:
   m_Father: {fileID: 5666420876100442961}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5666420875333951811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078630800767282734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3264d834d1bc2b94eac27fbf39682688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 8736039095940206587}
+  skinnedMeshRenderer: {fileID: 0}
+  color: {r: 1, g: 0.33490568, b: 0.33490568, a: 1}
+  duration: 0.1
 --- !u!1001 &5666420876560860396
 PrefabInstance:
   m_ObjectHideFlags: 0

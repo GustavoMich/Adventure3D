@@ -10,10 +10,12 @@ namespace Enemy
 {
     public class EnemyBase : MonoBehaviour, IDamageable
     {
-        public Collider collider;
+        public Collider mycollider;
         public FlashColor flashColor;
-        public ParticleSystem particleSystem;
+        public ParticleSystem myparticleSystem;
+
         public float startLife = 10f;
+        public bool lookAtPlayer = false;
 
         [SerializeField]private float _currentLife;
 
@@ -25,12 +27,17 @@ namespace Enemy
         public Ease startAnimationEase = Ease.OutBack;
         public bool startWithBornAnimation = true;
 
-
+        private PlayerController _player;
 
 
         private void Awake()
         {
             Init();
+        }
+
+        private void Start()
+        {
+            _player = GameObject.FindObjectOfType<PlayerController>();
         }
 
         protected void ResetLife()
@@ -58,7 +65,7 @@ namespace Enemy
 
         protected virtual void OnKill() 
         {
-            if (collider != null) collider.enabled = false;
+            if (mycollider != null) mycollider.enabled = false;
             Destroy(gameObject, 3f);
             PlayAnimationByTrigger(AnimationType.DEATH);
         }
@@ -66,7 +73,7 @@ namespace Enemy
         public void OnDamage(float f)
         {
             if (flashColor != null) flashColor.Flash();
-            if (particleSystem != null) particleSystem.Emit(15);
+            if (myparticleSystem != null) myparticleSystem.Emit(15);
 
             transform.position -= transform.forward;
 
@@ -92,13 +99,13 @@ namespace Enemy
         #endregion
 
 
-        private void Update()
+       /* private void Update()
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
                 OnDamage(5f);
             }
-        }
+        }*/
 
         public void Damage(float damage)
         {
@@ -111,6 +118,25 @@ namespace Enemy
 
             OnDamage(damage);
             transform.DOMove(transform.position - dir, .1f);
+        }
+
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            PlayerController p = collision.transform.GetComponent<PlayerController>();
+
+            if(p != null)
+            {
+                p.Damage(1);
+            }
+        }
+
+        public virtual void Update()
+        {
+            if (lookAtPlayer)
+            {
+                transform.LookAt(_player.transform.position);
+            }
         }
     }
 }
