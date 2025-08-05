@@ -39,10 +39,17 @@ namespace Boss
 
         private PlayerController _player;
 
+
+        private void OnValidate()
+        {
+            if (healthBase == null) healthBase = GetComponent<HealthBase>();
+        }
+
         private void Awake()
         {
             Init();
             healthBase.OnKill += OnBossKill;
+            OnValidate();
             StartAnimations();
         }
 
