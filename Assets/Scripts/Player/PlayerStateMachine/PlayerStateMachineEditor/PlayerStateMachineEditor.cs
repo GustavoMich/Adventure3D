@@ -5,7 +5,7 @@ using UnityEditor;
 [CustomEditor(typeof(PlayerStateMachine))]
 public class PlayerStateMachineEditor : Editor
 {
-    public bool showFoldout;
+   /* public bool showFoldout;
 
     public override void OnInspectorGUI()
     {
@@ -37,5 +37,5 @@ public class PlayerStateMachineEditor : Editor
                 }
             }
         }
-    }
+    }*/
 }

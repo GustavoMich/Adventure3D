@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5666420876100442964}
   - component: {fileID: 5666420876100442966}
   - component: {fileID: 4935644115548444330}
+  - component: {fileID: 3501019386420016081}
   m_Layer: 0
   m_Name: Enemy_03
   m_TagString: Enemy
@@ -85,6 +86,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3501019386420016081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666420876100442965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7f05bc68dd2094193a639d282e1b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mycollider: {fileID: 0}
+  flashColor: {fileID: 5666420875333951811}
+  myparticleSystem: {fileID: 0}
+  startLife: 25
+  lookAtPlayer: 1
+  _currentLife: 0
+  _animationBase: {fileID: 5666420876100442964}
+  startAnimationDuration: 0.2
+  startAnimationEase: 27
+  startWithBornAnimation: 1
+  gunBase: {fileID: 0}
 --- !u!1 &5666420876209737420
 GameObject:
   m_ObjectHideFlags: 0

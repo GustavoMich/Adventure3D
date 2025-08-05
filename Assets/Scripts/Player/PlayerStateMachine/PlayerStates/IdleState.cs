@@ -3,7 +3,7 @@ using Ebac.StateMachine;
 
 public class IdleState : StateBase
 {
-    private PlayerStateMachine player;
+   /* private PlayerStateMachine player;
 
     public IdleState(PlayerStateMachine player) : base()
     {
@@ -30,7 +30,7 @@ public class IdleState : StateBase
     public override void OnStateExit()
     {
         Debug.Log("Exiting Idle");
-    }
+    }*/
 }
 
 

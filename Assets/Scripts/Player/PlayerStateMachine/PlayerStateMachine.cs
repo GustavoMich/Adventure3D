@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    [Header("Walk Settings")]
+   /* [Header("Walk Settings")]
     public float walkSpeed = 3f;
     public float walkDistance = 5f;
 
@@ -58,5 +58,5 @@ public class PlayerStateMachine : MonoBehaviour
     {
         stateMachine.Update();
 
-    }
+    }*/
 }

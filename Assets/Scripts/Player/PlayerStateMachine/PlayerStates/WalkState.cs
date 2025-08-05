@@ -3,7 +3,7 @@ using Ebac.StateMachine;
 
 public class WalkState : StateBase
 {
-    private PlayerStateMachine player;
+   /* private PlayerStateMachine player;
     private Vector3 startPos;
     private Vector3 targetPos;
     private bool returning;
@@ -37,6 +37,6 @@ public class WalkState : StateBase
     public override void OnStateExit()
     {
         Debug.Log("Exit Walk");
-    }
+    }*/
 }
 

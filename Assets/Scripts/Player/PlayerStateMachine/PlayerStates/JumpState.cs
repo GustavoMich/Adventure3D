@@ -3,7 +3,7 @@ using Ebac.StateMachine;
 
 public class JumpState : StateBase
 {
-    private PlayerStateMachine player;
+   /* private PlayerStateMachine player;
     private bool hasJumped;
 
     public JumpState(PlayerStateMachine player) : base()
@@ -28,5 +28,5 @@ public class JumpState : StateBase
     public override void OnStateExit()
     {
         Debug.Log("Exiting Jump");
-    }
+    }*/
 }
