@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour//, IDamageable
 {
+    public List<Collider> colliders;
 
     public CharacterController characterController; 
     public float speed = 1f; 
@@ -24,7 +25,11 @@ public class PlayerController : MonoBehaviour//, IDamageable
     [Header("Flash")]
     public List<FlashColor> flashColors;
 
+
+    [Header("Life")]
     public HealthBase healthBase;
+
+    private bool _alive = true;
 
 
     private void OnValidate()
@@ -37,9 +42,21 @@ public class PlayerController : MonoBehaviour//, IDamageable
         OnValidate();
 
         healthBase.OnDamage += Damage;
+        healthBase.OnKill += OnKill;
     }
 
+
     #region LIFE
+    private void OnKill(HealthBase h)
+    {
+        if (_alive)
+        {
+            _alive = false;
+            animator.SetTrigger("Death");
+            colliders.ForEach(i => i.enabled = false);
+        }
+    }
+
     public void Damage(HealthBase h)
     {
         flashColors.ForEach(i => i.Flash());
