@@ -9,6 +9,7 @@ public class BossAppear : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       mygameObject.SetActive(true); 
+        if(other.transform.tag == "Player")
+            mygameObject.SetActive(true); 
     }
 }
