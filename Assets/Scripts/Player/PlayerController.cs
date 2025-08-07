@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour//, IDamageable
     {
         flashColors.ForEach(i => i.Flash());
         EffectsManager.Instance.ChangeVignette();
+        Shake.Instance.Shakec();
     }
 
     public void Damage(float damage, Vector3 dir)
