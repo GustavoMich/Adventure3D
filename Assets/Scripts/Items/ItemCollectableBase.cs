@@ -2,50 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemCollectableBase : MonoBehaviour
+
+namespace Itens
 {
-    public string compareTag = "Player";
-    public ParticleSystem myparticleSystem;
-    public float timeToHide = 1;
-    public GameObject graphicItem;
-
-    [Header("Sounds")]
-    public AudioSource audioSource;
-
-
-    private void Awake()
+    public class ItemCollectableBase : MonoBehaviour
     {
-       // if (myparticleSystem != null) myparticleSystem.transform.SetParent(null);
-    }
+        public ItemType itemType;
 
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.transform.CompareTag(compareTag))
+
+        public string compareTag = "Player";
+        public ParticleSystem myparticleSystem;
+        public float timeToHide = 1;
+        public GameObject graphicItem;
+
+        public Collider mycollider;
+
+        [Header("Sounds")]
+        public AudioSource audioSource;
+
+
+        private void Awake()
         {
-            Collect();
+            // if (myparticleSystem != null) myparticleSystem.transform.SetParent(null);
         }
+
+        private void OnTriggerEnter(Collider collision)
+        {
+            if (collision.transform.CompareTag(compareTag))
+            {
+                Collect();
+            }
+        }
+
+        protected virtual void Collect()
+        {
+            if (mycollider != null) mycollider.enabled = false;
+            if (graphicItem != null) graphicItem.SetActive(false);
+            Invoke("HideObject", timeToHide);
+            OnCollect();
+        }
+
+        private void HideObject()
+        {
+            gameObject.SetActive(false);
+
+        }
+
+
+        protected virtual void OnCollect()
+        {
+            if (myparticleSystem != null) myparticleSystem.Play();
+            if (audioSource != null) audioSource.Play();
+            ItemManager.Instance.AddByType(itemType);
+        }
+
+
+
     }
-    
-    protected virtual void Collect()
-    {
-        if(graphicItem != null) graphicItem.SetActive(false);
-        Invoke("HideObject", timeToHide);
-        OnCollect();
-    }
-
-    private void HideObject()
-    {
-        gameObject.SetActive(false);
-
-    }
-
-
-    protected virtual void OnCollect() 
-    { 
-        if (myparticleSystem != null) myparticleSystem.Play();
-        if (audioSource != null) audioSource.Play();
-    }
-
-
-
 }

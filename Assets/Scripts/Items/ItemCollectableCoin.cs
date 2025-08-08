@@ -5,13 +5,13 @@ using Itens;
 
 public class ItemCollectableCoin : ItemCollectableBase
 {
-    public Collider2D mycollider;
+    public Collider2D mcollider;
 
    protected override void OnCollect()
     {
         base.OnCollect();
         ItemManager.Instance.AddByType(ItemType.COIN);
-        mycollider.enabled = false;
+        mcollider.enabled = false;
         
     }
 }
