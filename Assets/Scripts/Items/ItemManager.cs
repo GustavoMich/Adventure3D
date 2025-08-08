@@ -67,5 +67,6 @@ namespace Itens
     {
         public ItemType itemType;
         public SOInt soint;
+        public Sprite icon;
     }
 }
