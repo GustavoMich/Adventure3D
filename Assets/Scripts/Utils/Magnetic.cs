@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Magnetic : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public float dist = .2f;
+    public float coinSpeed = 3f;
+    
     void Update()
     {
-        
+        if(Vector3.Distance(transform.position, PlayerController.Instance.transform.position) > dist)
+        {
+            coinSpeed++;
+            transform.position = Vector3.MoveTowards(transform.position, PlayerController.Instance.transform.position, Time.deltaTime * coinSpeed);
+        }
     }
 }
