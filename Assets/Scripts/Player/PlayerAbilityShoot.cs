@@ -10,6 +10,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     public GunBase gunBase;
     public GunBase secondGunBase;
     public Transform gunPosition;
+    public FlashColor _flashColor;
 
     private GunBase _currentGun;
 
@@ -55,6 +56,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     private void StartShoot()
     {
         _currentGun.StartShoot();
+        _flashColor?.Flash();
         Debug.Log("Shoot");
     }
 
