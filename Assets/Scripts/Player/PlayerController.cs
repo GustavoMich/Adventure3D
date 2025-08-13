@@ -24,8 +24,8 @@ public class PlayerController : Singleton<PlayerController>//, IDamageable
     public KeyCode keyRun = KeyCode.LeftShift; 
     public float speedRun = 1.5f;
 
-    [Header("Flash")]
-    public List<FlashColor> flashColors;
+    //[Header("Flash")]
+    //public List<FlashColor> flashColors;
 
 
     [Header("Life")]
@@ -83,7 +83,7 @@ public class PlayerController : Singleton<PlayerController>//, IDamageable
 
     public void Damage(HealthBase h)
     {
-        flashColors.ForEach(i => i.Flash());
+        //flashColors.ForEach(i => i.Flash());
         EffectsManager.Instance.ChangeVignette();
         Shake.Instance.Shakec();
     }

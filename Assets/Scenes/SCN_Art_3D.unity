@@ -6785,9 +6785,6 @@ MonoBehaviour:
   jumpKeyCode: 32
   keyRun: 304
   speedRun: 1.5
-  flashColors:
-  - {fileID: 1430451112}
-  - {fileID: 724890563}
   healthBase: {fileID: 942625115}
   _clothChanger: {fileID: 1957637799}
 --- !u!4 &942625112
@@ -9124,7 +9121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319397934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.58, y: 0, z: -4.76}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1975378694}
@@ -14476,7 +14473,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972749405}
-  m_LocalRotation: {x: 0.0000000020668092, y: 0.99033433, z: -0.13870122, w: 0.0000000147571315}
+  m_LocalRotation: {x: -0.0000000020668094, y: 0.99033433, z: -0.13870122, w: -0.000000014757132}
   m_LocalPosition: {x: -7.855011, y: 0.22635984, z: 3.6683655}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14574,7 +14571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975378691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 410.47, y: -6.72, z: 57.42}
+  m_LocalPosition: {x: 393.64, y: -6.72, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1319397935}
