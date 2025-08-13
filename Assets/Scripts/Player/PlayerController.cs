@@ -35,6 +35,7 @@ public class PlayerController : Singleton<PlayerController>//, IDamageable
     [SerializeField] private ClothChanger _clothChanger;
 
     private bool _alive = true;
+    private bool _jumping = false;
 
   
 
@@ -102,11 +103,24 @@ public class PlayerController : Singleton<PlayerController>//, IDamageable
         var speedVector = transform.forward * inputAxisVertical * speed; 
 
         if (characterController.isGrounded) 
-        { 
+        {
+            if (_jumping)
+            {
+                _jumping = false;
+                animator.SetTrigger("Land");
+            }
+
+
             vSpeed = 0; 
             if (Input.GetKeyDown(jumpKeyCode)) 
             { 
-                vSpeed = jumpSpeed; 
+                vSpeed = jumpSpeed;
+
+                if (!_jumping)
+                {
+                    _jumping = true;
+                   animator.SetTrigger("Jump");
+                }
             } 
         }
 
