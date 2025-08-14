@@ -16,7 +16,7 @@ public class GunShootLimits : GunBase
 
     private void Awake()
     {
-        GetAllUIs();
+       GetAllUIs();
     }
 
     protected override IEnumerator ShootCoroutine()
@@ -66,11 +66,14 @@ public class GunShootLimits : GunBase
 
     private void UpdateUI()
     {
-        uIGunUpdaters.ForEach(i => i.UpdateValue(maxShoot, _currentShoots));
+        if(uIGunUpdaters != null)
+        {
+           uIGunUpdaters.ForEach(i => i.UpdateValue(maxShoot, _currentShoots));
+        }
     }
 
     private void GetAllUIs()
     {
-        uIGunUpdaters = GameObject.FindObjectsOfType<UIFillUpdater>().ToList();
+        uIGunUpdaters = GameObject.FindGameObjectsWithTag("UI_Gun").Select(go => go.GetComponent<UIFillUpdater>()).Where(c => c != null).ToList();
     }
 }

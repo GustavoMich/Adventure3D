@@ -3810,7 +3810,7 @@ GameObject:
   - component: {fileID: 596607220}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: UI_Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7219,9 +7219,8 @@ MonoBehaviour:
   destroyOnKill: 0
   _currentLife: 0
   uiGunUpdater:
-  - {fileID: 1111363497}
-  - {fileID: 803077571}
   - {fileID: 1011696263}
+  - {fileID: 803077571}
   damageMultiply: 1
 --- !u!1001 &950019377
 PrefabInstance:
@@ -8138,7 +8137,7 @@ GameObject:
   - component: {fileID: 1111363497}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: UI_Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8991,7 +8990,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213641959}
-  m_LocalRotation: {x: 0.009459448, y: 0.98802847, z: -0.06754096, w: 0.13837829}
+  m_LocalRotation: {x: 0.009459452, y: 0.98802847, z: -0.06754098, w: 0.13837829}
   m_LocalPosition: {x: -7.855011, y: 0.22635984, z: 3.6683655}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -24956,7 +24955,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972749405}
-  m_LocalRotation: {x: 0.0000000020668092, y: 0.99033433, z: -0.13870122, w: 0.0000000147571315}
+  m_LocalRotation: {x: -0.0000000020668094, y: 0.99033433, z: -0.13870122, w: -0.000000014757132}
   m_LocalPosition: {x: -7.855011, y: 0.22635984, z: 3.6683655}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -25518,10 +25517,7 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 1911997387}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras:
-  - {fileID: 1387500439}
-  - {fileID: 1213641961}
-  - {fileID: 1972749407}
+  m_ChildCameras: []
   m_Instructions:
   - m_FullHash: 1251315677
     m_VirtualCamera: {fileID: 1213641961}
