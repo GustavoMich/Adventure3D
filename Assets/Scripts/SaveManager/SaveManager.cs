@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Ebac.Core.Singleton;
+using Itens;
 
 public class SaveManager : Singleton<SaveManager>
 {
@@ -11,6 +12,7 @@ public class SaveManager : Singleton<SaveManager>
     protected override void Awake()
     {
         base.Awake();
+        DontDestroyOnLoad(gameObject);
         _saveSetup = new SaveSetup();
         _saveSetup.lastLevel = 2;
         _saveSetup.playerName = "Test";
@@ -29,6 +31,14 @@ public class SaveManager : Singleton<SaveManager>
         SaveFile(setupToJson);
     }
 
+    public void SaveItems()
+    {
+        _saveSetup.coins = Itens.ItemManager.Instance.GetItemByType(Itens.ItemType.COIN).soint.value;
+        _saveSetup.health = Itens.ItemManager.Instance.GetItemByType(Itens.ItemType.LIFE_PACK).soint.value;
+        Save();
+
+    }
+
     public void SaveName(string text)
     {
         _saveSetup.playerName = text;
@@ -38,6 +48,7 @@ public class SaveManager : Singleton<SaveManager>
     public void SaveLastLevel(int level)
     {
         _saveSetup.lastLevel = level;
+        SaveItems();
         Save();
     }
     #endregion
@@ -66,5 +77,8 @@ public class SaveManager : Singleton<SaveManager>
 public class SaveSetup 
 {
     public int lastLevel;
+    public float coins;
+    public float health;
+
     public string playerName;
 }
