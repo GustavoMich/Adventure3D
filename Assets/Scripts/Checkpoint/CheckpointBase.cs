@@ -24,6 +24,8 @@ public class CheckpointBase : MonoBehaviour
     {
         TurnItOn();
         SaveCheckpoint();
+        SaveManager.Instance.SaveGame();
+
     }
 
     [NaughtyAttributes.Button]

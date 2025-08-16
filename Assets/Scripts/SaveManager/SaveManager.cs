@@ -97,6 +97,17 @@ public class SaveManager : Singleton<SaveManager>
          FileLoaded.Invoke(_saveSetup);
     }
 
+    public void SaveGame()
+    {
+        SaveItems();
+        Save();
+    }
+
+    public void CreateNewSavePlay()
+    {
+        CreateNewSave();
+    }
+
     private void SaveLevelOne()
     {
         SaveLastLevel(1);
