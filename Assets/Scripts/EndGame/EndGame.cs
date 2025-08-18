@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class EndGame : MonoBehaviour
 {
+    public SFXType sfxType;
     public List<GameObject> endGameObjects;
 
     private bool _endGame = false;
@@ -17,6 +18,10 @@ public class EndGame : MonoBehaviour
         endGameObjects.ForEach(i => i.SetActive(false));
     }
 
+    private void PlaySFX()
+    {
+        SFXPool.Instance.Play(sfxType);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,7 +29,7 @@ public class EndGame : MonoBehaviour
 
         if (!_endGame && p != null)
         {
-
+            PlaySFX();
             ShowEndGame();
         }
     }
