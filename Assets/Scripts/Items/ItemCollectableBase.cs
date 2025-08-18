@@ -7,6 +7,7 @@ namespace Itens
 {
     public class ItemCollectableBase : MonoBehaviour
     {
+        public SFXType sfxType;
         public ItemType itemType;
 
 
@@ -34,8 +35,14 @@ namespace Itens
             }
         }
 
+        private void PlaySFX()
+        {
+            SFXPool.Instance.Play(sfxType);
+        }
+
         protected virtual void Collect()
         {
+            PlaySFX();
             if (mycollider != null) mycollider.enabled = false;
             if (graphicItem != null) graphicItem.SetActive(false);
             Invoke("HideObject", timeToHide);
